@@ -5,15 +5,15 @@ PlantScanID - Scan Plant
 
 {% block content %}
 <div class="scan-card flex items-center justify-center min-h-screen bg-gray-100">
-    <form class="bg-white shadow-md rounded-lg p-8 max-w-md w-full my-10" >
+    <form class="bg-white shadow-md rounded-lg p-8 max-w-md w-full my-10" action="/predict/{{ image_id }}" method="post" enctype="multipart/form-data">
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="image">
           Upload Image Plant Leaves
         </label>
-        <input class="appearance-none border  rounded-lx w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="image" type="file">
+        <input class="appearance-none border  rounded-lx w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="image" type="file" name="file" required>
       </div>
       <div class="flex items-center justify-center">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Upload">
           Submit
         </button>
       </div>

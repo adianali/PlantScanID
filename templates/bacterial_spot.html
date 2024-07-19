@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+{% block title %}
+PlantScanID
+{% endblock %}
+
+{% block content %}
+<section class="max-w-screen-xl flex items-center justify-center mx-auto p-4">
+    <div class="flex flex-col md:flex-row items-center justify-center xl:justify-start">
+        <div class="md:ml-16 mb-12 md:mb-0 text-center xl:text-left w-full md:w-1/2 flex flex-col items-center justify-center">
+            <h1 class="font-semibold text-3xl md:text-3xl lg:text-4xl text-red-700 leading-normal mb-2 mt-20">Tanaman Anda Terkena Penyakit {{pred_output}}</h1>
+            <h3 class="font-normal text-2xl text-gray-900 leading-relaxed mb-9"><strong>Penyakit Bercak Bakteri pada Tomat</strong></h3>
+        </div>
+        <div class="w-full md:w-1/2 mt-28 pr-14">
+            <img src="{{ url_for('static', filename='user_uploaded/' + user_image) }}" alt="Home img" class="rounded-3xl mx-auto md:ml-0">
+        </div>
+    </div>
+</section>
+
+<section class="max-w-screen-xl flex items-center mx-auto pl-4 pb-4">
+        <div class="flex-grow block max-w-screen-xl p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Deskripsi</h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400">
+                Bercak bakteri merupakan penyakit yang disebabkan oleh bakteri genus 
+                Xanthomonas. Penyakit ini merupakan penyakit yang paling merusak pada tomat yang hidup di lingkungan 
+                yang hangat dan lembab.Gejala penyakit ini berupa luka kecil berwarna kuning kehijauan pada 
+                daun muda, yang tampak cacat dan menggulung. Pada daun yang lebih tua, luka dibatasi oleh vena dan 
+                menjadi lebih kaku. Pada akhirnya, bercak membesar dan warnanya menjadi kecoklatan dan berwujud kasar.
+            </p>
+        </div>
+</section>
+
+<section class="max-w-screen-xl flex items-center mx-auto pl-4 pb-4">
+        <div class="flex-grow block max-w-screen-xl p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Tindakan Pencegahan</h5>
+            <ul class="font-normal text-gray-700 dark:text-gray-400 list-disc pl-6">
+                <li>Jangan membudidayakan tomat bersamaan dengan kentang.</li>
+                <li>Usahakan tanaman tetap kering dengan drainase dan ventilasi kultur yang baik.</li>
+                <li>Pemasangan naungan transparan dengan bahan terpal dan tiang kayu.</li>
+                <li>Pemberian pupuk yang mengandung silika.</li>
+                <li>Hindari irigasi sore hari dan irigasi siram di permukaan tanah.</li>
+                <li>Melakukan rotasi tanaman dua hingga tiga tahun dengan tanaman non-inang.</li>
+            </ul>
+        </div>
+</section>
+
+<section class="max-w-screen-xl flex items-center mx-auto pl-4 pb-4 ">
+    <div class="flex-grow block max-w-screen-xl p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Pengobatan:</h5>
+        <p class="font-normal text-gray-700 dark:text-gray-400">
+            Menggunakan semprotan fungisida berbahan dasar mandipropamid, klorotalonil, fluazinam, atau mankozeb
+        </p>
+    </div>
+</section>
+
+{% endblock %}
+
+
