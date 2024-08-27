@@ -1,99 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html'%}
+{% block title %}
+PlantScanID
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
-        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
-
-    <title>Plant Clinic</title>
-
-    <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-        }
-
-        .border img {
-            border-radius: 15px;
-            border: 2px solid black;
-        }
-        
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: #25282b;
-            color: white;
-            text-align: center;
-            height: 55px;
-            margin-top: auto;
-        }
-    </style>
-</head>
-
-<body>
-
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-          <a class="navbar-brand" href="/">Plant Clinic</a>
-          <!--...-->
-    </nav>
-
-    <div class="container my-2">
-        <div class="row mb-5">
-
-            <div class="col-sm" style="margin-bottom: 23px; margin-top: 25px;">
-                <span class="border border-primary">
-                    <img src="{{ user_image }}" alt="User Image" class="img-thumbnail">
-                    
-                </span>
-            </div>
-
-            <div class="col-sm" style="margin-top: 25px;">
-
-                <div>
-                    <h1 style="padding: 15px; background-color: rgb(58 168 83); color: white;"
-                        class="text-center mb-5 content-h1 rounded">
-                        {{pred_output}} </h1>
-                </div>
-                <div class="details">
-
-                    
-
-                        <h2>Tidak ada penyakit pada tanamanmu</span></h2></br>
-                        <h4 style="line-height: 150%;">Kamu tidak perlu khawatir karena tanamanmu sehat, terus pertahankan yaa!</h4>
-                        <hr class="w-100 mx-auto ">
-                    
-                </div>
-            </div>
+{% block content %}
+<section class="max-w-screen-xl flex items-center justify-center mx-auto p-4">
+    <div class="flex flex-col md:flex-row items-center justify-center xl:justify-start">
+        <div class="md:ml-16 mb-12 md:mb-0 text-center xl:text-left w-full md:w-1/2 flex flex-col items-center justify-center">
+            <h1 class="font-semibold text-3xl md:text-3xl lg:text-4xl text-red-700 leading-normal mb-2 mt-20">Tanaman Anda {{pred_output}}</h1>
+            <h3 class="font-normal text-2xl text-gray-900 leading-relaxed mb-9"><strong>Tidak ada penyakit pada tanamanmu</strong></h3>
+        </div>
+        <div class="w-full md:w-1/2 mt-28 pr-14">
+            <img src="{{ url_for('static', filename='user_uploaded/' + user_image) }}" alt="Home img" class="rounded-3xl mx-auto md:ml-0">
         </div>
     </div>
-    
-     <section>
-        <div class="container-fluid details" style="margin-top: 150px">
-        <div class="col text-center">
-           <a href="/">
-           <button type="button" class="btn btn-info" style="align-items: center; font-size: 20px;">Home</button>
-           </a>
+</section>
+
+<section class="max-w-screen-xl flex items-center mx-auto pl-4 pb-4">
+        <div class="flex-grow block max-w-screen-xl p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Deskripsi</h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400">
+                tidak perlu khawatir karena tanamanmu sehat, terus pertahankan yaa!
+            </p>
         </div>
-        </div>
-    </section>
-    
-    <section>
-        <div class="footer">
+</section>
 
-            <h4 style="font-size: 1rem; color: #ffffff; padding-bottom: 15px;" class="text-center my-3 contents">
-                Made by Group 3 DS02 DTI Telkom </h4>
-
-        </div>
-    </section>
-    
-</body>
-
-</html>
-
-
+{% endblock %}
